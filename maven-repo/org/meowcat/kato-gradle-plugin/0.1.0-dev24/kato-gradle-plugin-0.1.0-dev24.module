@@ -1,0 +1,82 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "org.meowcat",
+    "module": "kato-gradle-plugin",
+    "version": "0.1.0-dev24",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.github.jengelman.gradle.plugins",
+          "module": "shadow",
+          "version": {
+            "requires": "6.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kato-gradle-plugin-0.1.0-dev24.jar",
+          "url": "kato-gradle-plugin-0.1.0-dev24.jar",
+          "size": 16723,
+          "sha512": "2e39e618c0e5d0f8c1c2d7de46614415940a2361274eb2e82ec73966c30abea30fbe8da0b1fad9b009226015b371b7de26cc29e0395bee2a66823e6b4e967547",
+          "sha256": "426333b530819e47aea87b1d3e865f9ddb30348affb9751435ec7466f4aab79b",
+          "sha1": "da37ad2625a3f211eff384aedf7b639961a41cb4",
+          "md5": "1f8ce0bf4dddd8d6f406d053a4ab2a57"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.localToProject": "public",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.github.jengelman.gradle.plugins",
+          "module": "shadow",
+          "version": {
+            "requires": "6.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kato-gradle-plugin-0.1.0-dev24.jar",
+          "url": "kato-gradle-plugin-0.1.0-dev24.jar",
+          "size": 16723,
+          "sha512": "2e39e618c0e5d0f8c1c2d7de46614415940a2361274eb2e82ec73966c30abea30fbe8da0b1fad9b009226015b371b7de26cc29e0395bee2a66823e6b4e967547",
+          "sha256": "426333b530819e47aea87b1d3e865f9ddb30348affb9751435ec7466f4aab79b",
+          "sha1": "da37ad2625a3f211eff384aedf7b639961a41cb4",
+          "md5": "1f8ce0bf4dddd8d6f406d053a4ab2a57"
+        }
+      ]
+    }
+  ]
+}
