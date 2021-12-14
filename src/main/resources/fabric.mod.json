@@ -1,37 +1,30 @@
 {
-  "schemaVersion": 1,
-  "id": "modid",
-  "version": "${version}",
+  "id": "mesagisto",
+  "version": "0.1.0",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Mesagisto Mod",
+  "description": "Mesagisto: A message forwarding program connecting different instant-message platforms. 信使: 一款连接不同即时通讯平台的消息转发程序。 ",
   "authors": [
-    "Me!"
+    "Itsusinn"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
-
-  "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
-
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "net.fabricmc.example.ExampleMod"
-    ]
+    "homepage": "https://github.com/MeowCat-Studio/mesagisto",
+    "sources": "https://github.com/MeowCat-Studio/farbic-message-source"
   },
   "mixins": [
-    "modid.mixins.json"
+    "mesagisto.mixins.json"
   ],
-
-  "depends": {
-    "fabricloader": ">=0.7.4",
-    "fabric": "*",
-    "minecraft": "1.16.x"
+  "license": "LGPLv2",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "org.meowcat.mesagisto.farbic.Mod"
+      }
+    ]
   },
-  "suggests": {
-    "another-mod": "*"
-  }
+  "depends": {
+    "fabric-language-kotlin": ">=1.7.0+kotlin.1.6.0"
+  },
+  "schemaVersion": 1
 }
