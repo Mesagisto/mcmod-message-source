@@ -1,5 +1,7 @@
-# gradle
+extract/
+run/
 
+# gradle
 .gradle/
 build/
 out/

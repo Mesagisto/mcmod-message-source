@@ -11,13 +11,14 @@ import net.minecraft.text.LiteralText
 import net.minecraft.text.Text
 import org.apache.logging.log4j.LogManager
 import org.meowcat.mesagisto.client.Logger
+import org.meowcat.mesagisto.client.MesagistoConfig
 import org.meowcat.mesagisto.farbic.handlers.send
 import java.util.* // ktlint-disable no-wildcard-imports
 import kotlin.coroutines.EmptyCoroutineContext
 import kotlin.io.path.Path
 
 object Mod : ModInitializer, CoroutineScope {
-  internal val LOGGER = LogManager.getLogger()
+  private val LOGGER = LogManager.getLogger()
   lateinit var server: MinecraftServer
   override val coroutineContext = EmptyCoroutineContext
 
@@ -28,6 +29,7 @@ object Mod : ModInitializer, CoroutineScope {
 
   override fun onInitialize() {
     Logger.bridgeToLog4j(LOGGER)
+
     if (!CONFIG.enable) {
       Logger.info { "信使插件未启用" }
       return
@@ -39,6 +41,13 @@ object Mod : ModInitializer, CoroutineScope {
     ServerLifecycleEvents.SERVER_STOPPING.register {
       configKeeper.save()
     }
+    MesagistoConfig.builder {
+      name = "farbic"
+      natsAddress = CONFIG.nats
+      cipherEnable = CONFIG.cipher.enable
+      cipherKey = CONFIG.cipher.key
+      cipherRefusePlain = CONFIG.cipher.refusePlain
+    }.apply()
   }
 
   fun onServerChat(

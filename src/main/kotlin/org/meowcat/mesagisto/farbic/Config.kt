@@ -51,6 +51,13 @@ data class Config(
   val enable: Boolean = false,
   val channel: String = "your-channel",
   val nats: String = "nats://itsusinn.site:4222",
-  val cipher: String = "aes",
+  val cipher: CipherConfig = CipherConfig(),
   var idBase: Int = 0
+)
+@Serializable
+data class CipherConfig(
+  val enable: Boolean = true,
+  val key: String = "default-key",
+  @SerialName("refuse-plain")
+  val refusePlain: Boolean = true
 )
