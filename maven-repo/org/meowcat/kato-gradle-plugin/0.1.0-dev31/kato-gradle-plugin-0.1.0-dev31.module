@@ -3,7 +3,7 @@
   "component": {
     "group": "org.meowcat",
     "module": "kato-gradle-plugin",
-    "version": "0.1.0-dev24",
+    "version": "0.1.0-dev31",
     "attributes": {
       "org.gradle.status": "release"
     }
@@ -36,13 +36,13 @@
       ],
       "files": [
         {
-          "name": "kato-gradle-plugin-0.1.0-dev24.jar",
-          "url": "kato-gradle-plugin-0.1.0-dev24.jar",
-          "size": 16723,
-          "sha512": "2e39e618c0e5d0f8c1c2d7de46614415940a2361274eb2e82ec73966c30abea30fbe8da0b1fad9b009226015b371b7de26cc29e0395bee2a66823e6b4e967547",
-          "sha256": "426333b530819e47aea87b1d3e865f9ddb30348affb9751435ec7466f4aab79b",
-          "sha1": "da37ad2625a3f211eff384aedf7b639961a41cb4",
-          "md5": "1f8ce0bf4dddd8d6f406d053a4ab2a57"
+          "name": "kato-gradle-plugin-0.1.0-dev31.jar",
+          "url": "kato-gradle-plugin-0.1.0-dev31.jar",
+          "size": 17317,
+          "sha512": "8c815d58dfd37681d425c64ec5cd5312e57ecfbe5b39a65df2b175de3e4f9912cc3d1b62d58bb99ca02e77aa85ed3e217a6a025bc48160d12e041d1636a1af55",
+          "sha256": "1fc80adcfc953b1e13d016dadd7a0ba29e3e4a566f9455be13f80ed355558f5d",
+          "sha1": "e55c9f1cce4e550f2bb69d943c55b46471b4af8e",
+          "md5": "8c8cb14d73e65062df5c93a8ff664ecd"
         }
       ]
     },
@@ -68,13 +68,13 @@
       ],
       "files": [
         {
-          "name": "kato-gradle-plugin-0.1.0-dev24.jar",
-          "url": "kato-gradle-plugin-0.1.0-dev24.jar",
-          "size": 16723,
-          "sha512": "2e39e618c0e5d0f8c1c2d7de46614415940a2361274eb2e82ec73966c30abea30fbe8da0b1fad9b009226015b371b7de26cc29e0395bee2a66823e6b4e967547",
-          "sha256": "426333b530819e47aea87b1d3e865f9ddb30348affb9751435ec7466f4aab79b",
-          "sha1": "da37ad2625a3f211eff384aedf7b639961a41cb4",
-          "md5": "1f8ce0bf4dddd8d6f406d053a4ab2a57"
+          "name": "kato-gradle-plugin-0.1.0-dev31.jar",
+          "url": "kato-gradle-plugin-0.1.0-dev31.jar",
+          "size": 17317,
+          "sha512": "8c815d58dfd37681d425c64ec5cd5312e57ecfbe5b39a65df2b175de3e4f9912cc3d1b62d58bb99ca02e77aa85ed3e217a6a025bc48160d12e041d1636a1af55",
+          "sha256": "1fc80adcfc953b1e13d016dadd7a0ba29e3e4a566f9455be13f80ed355558f5d",
+          "sha1": "e55c9f1cce4e550f2bb69d943c55b46471b4af8e",
+          "md5": "8c8cb14d73e65062df5c93a8ff664ecd"
         }
       ]
     }

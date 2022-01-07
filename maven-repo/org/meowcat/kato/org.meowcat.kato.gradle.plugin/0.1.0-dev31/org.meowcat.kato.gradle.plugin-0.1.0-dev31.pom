@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.meowcat.kato</groupId>
   <artifactId>org.meowcat.kato.gradle.plugin</artifactId>
-  <version>0.1.0-dev24</version>
+  <version>0.1.0-dev31</version>
   <packaging>pom</packaging>
   <name>KatoLoader Gradle Plugin</name>
   <description>KatoLoader Gradle Plugin</description>
@@ -11,7 +11,7 @@
     <dependency>
       <groupId>org.meowcat</groupId>
       <artifactId>kato-gradle-plugin</artifactId>
-      <version>0.1.0-dev24</version>
+      <version>0.1.0-dev31</version>
     </dependency>
   </dependencies>
 </project>
