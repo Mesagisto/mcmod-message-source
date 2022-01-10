@@ -1,8 +1,8 @@
 package org.meowcat.mesagisto.farbic.handlers
 
-import arrow.core.Either
 import io.nats.client.impl.NatsMessage
 import org.meowcat.mesagisto.client.Base64
+import org.meowcat.mesagisto.client.data.Either
 import org.meowcat.mesagisto.client.data.Message
 import org.meowcat.mesagisto.client.data.MessageType
 import org.meowcat.mesagisto.client.data.Packet

@@ -1,6 +1,7 @@
 {
+  "schemaVersion": 1,
   "id": "mesagisto",
-  "version": "0.1.0",
+  "version": "${version}",
 
   "name": "Mesagisto Mod",
   "description": "Mesagisto: A message forwarding program connecting different instant-message platforms. 信使: 一款连接不同即时通讯平台的消息转发程序。 ",
@@ -14,17 +15,18 @@
   "mixins": [
     "mesagisto.mixins.json"
   ],
+  "environment": "*",
   "license": "LGPLv2",
   "entrypoints": {
     "main": [
       {
-        "adapter": "kotlin",
-        "value": "org.meowcat.mesagisto.farbic.Mod"
+        "value": "org.meowcat.mesagisto.farbic.ModAdapter"
       }
     ]
   },
   "depends": {
-    "fabric-language-kotlin": ">=1.7.0+kotlin.1.6.0"
-  },
-  "schemaVersion": 1
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  }
 }

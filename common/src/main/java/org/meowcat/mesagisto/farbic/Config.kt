@@ -3,9 +3,7 @@ package org.meowcat.mesagisto.farbic
 
 import kotlinx.serialization.* // ktlint-disable no-wildcard-imports
 import java.nio.file.Path
-import kotlin.io.path.exists
-import kotlin.io.path.readText
-import kotlin.io.path.writeText
+import kotlin.io.path.* // ktlint-disable no-wildcard-imports
 
 val Yaml = com.charleskorn.kaml.Yaml.default
 class ConfigKeeper<C : Any> (
@@ -20,7 +18,6 @@ class ConfigKeeper<C : Any> (
     path.writeText(str)
   }
   companion object {
-
     inline fun <reified T : Any> create(
       path: Path,
       defaultValue: () -> T
@@ -38,6 +35,8 @@ class ConfigKeeper<C : Any> (
       } else {
         val default = defaultValue()
         val str = Yaml.encodeToString(T::class.serializer(), default)
+        path.parent.createDirectories()
+        path.createFile()
         path.writeText(str)
         default
       }

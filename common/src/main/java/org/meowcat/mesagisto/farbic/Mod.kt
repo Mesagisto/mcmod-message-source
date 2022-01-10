@@ -12,6 +12,7 @@ import net.minecraft.text.Text
 import org.apache.logging.log4j.LogManager
 import org.meowcat.mesagisto.client.Logger
 import org.meowcat.mesagisto.client.MesagistoConfig
+import org.meowcat.mesagisto.farbic.api.IChat
 import org.meowcat.mesagisto.farbic.handlers.send
 import java.util.* // ktlint-disable no-wildcard-imports
 import kotlin.coroutines.EmptyCoroutineContext
@@ -23,7 +24,9 @@ object Mod : ModInitializer, CoroutineScope {
   override val coroutineContext = EmptyCoroutineContext
 
   private val configKeeper =
-    ConfigKeeper.create(Path("config/mesagisto.yml")) { Config() }
+    ConfigKeeper.create(Path("mods/mesagisto/config.yml")) { Config() }
+
+  private val chat = ServiceLoader.load(IChat::class.java).first()
 
   val CONFIG = configKeeper.value
 
@@ -42,7 +45,7 @@ object Mod : ModInitializer, CoroutineScope {
       configKeeper.save()
     }
     MesagistoConfig.builder {
-      name = "farbic"
+      name = "fabric"
       natsAddress = CONFIG.nats
       cipherEnable = CONFIG.cipher.enable
       cipherKey = CONFIG.cipher.key
@@ -69,4 +72,6 @@ fun Mod.broadcastMessage(
   message: String,
   type: MessageType = MessageType.CHAT,
   senderUuid: UUID = UUID.randomUUID()
-) = broadcastMessage(LiteralText(message), type, senderUuid)
+) {
+  broadcastMessage(LiteralText(message), type, senderUuid)
+}
