@@ -18,8 +18,8 @@ jobs:
           distribution: zulu
           cache: gradle
 
-      - name: Gradle build
-        run: make all clean
+      - name: Build
+        run: bash build.sh
 
       - name: Github release
         uses: "marvinpinto/action-automatic-releases@latest"
