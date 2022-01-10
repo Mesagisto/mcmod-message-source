@@ -42,11 +42,7 @@ dependencies {
   minecraft("com.mojang:minecraft:1.16.5")
   mappings("net.fabricmc:yarn:1.16.5+build.1:v2")
 
-  pkgIn(
-    project(":common").apply {
-      isTransitive = false
-    }
-  )
+  pkgIn(project(":common"))
   pkgIn("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt")
   pkgIn("io.nats:jnats:${property("nats_version")}")
   pkgIn("org.meowcat:mesagisto-client-jvm:${property("mesagisto_client_version")}")
