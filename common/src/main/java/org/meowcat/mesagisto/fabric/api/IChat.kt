@@ -1,4 +1,4 @@
-package org.meowcat.mesagisto.farbic.api
+package org.meowcat.mesagisto.fabric.api
 
 import net.minecraft.network.MessageType
 import net.minecraft.server.MinecraftServer

@@ -1,10 +1,10 @@
-package org.meowcat.mesagisto.farbic.mixin;
+package org.meowcat.mesagisto.fabric.mixin;
 
 import net.minecraft.network.packet.c2s.play.ChatMessageC2SPacket;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import org.jetbrains.annotations.NotNull;
-import org.meowcat.mesagisto.farbic.Mod;
+import org.meowcat.mesagisto.fabric.Mod;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

@@ -1,9 +1,9 @@
-package org.meowcat.mesagisto.farbic.impl
+package org.meowcat.mesagisto.fabric.impl
 
 import net.minecraft.network.MessageType
 import net.minecraft.server.MinecraftServer
 import net.minecraft.text.Text
-import org.meowcat.mesagisto.farbic.api.IChat
+import org.meowcat.mesagisto.fabric.api.IChat
 import java.util.* // ktlint-disable no-wildcard-imports
 
 class ChatImpl : IChat {

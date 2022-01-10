@@ -1,4 +1,4 @@
-package org.meowcat.mesagisto.farbic;
+package org.meowcat.mesagisto.fabric;
 
 import net.fabricmc.api.ModInitializer;
 

@@ -1,4 +1,4 @@
-package org.meowcat.mesagisto.farbic
+package org.meowcat.mesagisto.fabric
 
 import org.meowcat.mesagisto.client.ILogger
 import org.meowcat.mesagisto.client.LogLevel

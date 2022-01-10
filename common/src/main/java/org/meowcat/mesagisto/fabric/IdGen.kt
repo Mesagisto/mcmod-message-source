@@ -1,6 +1,6 @@
-package org.meowcat.mesagisto.farbic
+package org.meowcat.mesagisto.fabric
 
-import org.meowcat.mesagisto.farbic.Mod.CONFIG
+import org.meowcat.mesagisto.fabric.Mod.CONFIG
 import java.util.concurrent.atomic.AtomicInteger
 
 object IdGen {

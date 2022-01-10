@@ -1,4 +1,4 @@
-package org.meowcat.mesagisto.farbic.handlers
+package org.meowcat.mesagisto.fabric.handlers
 
 import io.nats.client.impl.NatsMessage
 import org.meowcat.mesagisto.client.Base64
@@ -6,8 +6,8 @@ import org.meowcat.mesagisto.client.data.Either
 import org.meowcat.mesagisto.client.data.Message
 import org.meowcat.mesagisto.client.data.MessageType
 import org.meowcat.mesagisto.client.data.Packet
-import org.meowcat.mesagisto.farbic.Mod
-import org.meowcat.mesagisto.farbic.broadcastMessage
+import org.meowcat.mesagisto.fabric.Mod
+import org.meowcat.mesagisto.fabric.broadcastMessage
 
 suspend fun receive(
   message: NatsMessage

@@ -10,7 +10,7 @@
   ],
   "contact": {
     "homepage": "https://github.com/MeowCat-Studio/mesagisto",
-    "sources": "https://github.com/MeowCat-Studio/farbic-message-source"
+    "sources": "https://github.com/MeowCat-Studio/fabric-message-source"
   },
   "mixins": [
     "mesagisto.mixins.json"
@@ -20,7 +20,7 @@
   "entrypoints": {
     "main": [
       {
-        "value": "org.meowcat.mesagisto.farbic.ModAdapter"
+        "value": "org.meowcat.mesagisto.fabric.ModAdapter"
       }
     ]
   },

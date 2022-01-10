@@ -1,4 +1,4 @@
-package org.meowcat.mesagisto.farbic
+package org.meowcat.mesagisto.fabric
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.runBlocking
@@ -12,8 +12,8 @@ import net.minecraft.text.Text
 import org.apache.logging.log4j.LogManager
 import org.meowcat.mesagisto.client.Logger
 import org.meowcat.mesagisto.client.MesagistoConfig
-import org.meowcat.mesagisto.farbic.api.IChat
-import org.meowcat.mesagisto.farbic.handlers.send
+import org.meowcat.mesagisto.fabric.api.IChat
+import org.meowcat.mesagisto.fabric.handlers.send
 import java.util.* // ktlint-disable no-wildcard-imports
 import kotlin.coroutines.EmptyCoroutineContext
 import kotlin.io.path.Path

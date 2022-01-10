@@ -13,11 +13,11 @@ tasks.compileKotlin {
 }
 
 dependencies {
-  modCompileOnly("net.fabricmc:fabric-loader:${property("loader_version")}")
-  modCompileOnly("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
-
   minecraft("com.mojang:minecraft:1.16.5")
   mappings("net.fabricmc:yarn:1.16.5+build.1:v2")
+
+  modCompileOnly("net.fabricmc:fabric-loader:${property("loader_version")}")
+  modCompileOnly("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
 
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt")
   implementation("io.nats:jnats:${property("nats_version")}")

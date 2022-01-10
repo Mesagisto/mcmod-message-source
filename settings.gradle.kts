@@ -1,4 +1,4 @@
-rootProject.name = "farbic-message-source"
+rootProject.name = "fabric-message-source"
 pluginManagement {
   repositories {
     maven("https://maven.fabricmc.net/") {

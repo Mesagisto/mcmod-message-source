@@ -1,12 +1,12 @@
-package org.meowcat.mesagisto.farbic.handlers
+package org.meowcat.mesagisto.fabric.handlers
 
 import io.nats.client.impl.NatsMessage
 import net.minecraft.server.network.ServerPlayerEntity
 import org.meowcat.mesagisto.client.Server
 import org.meowcat.mesagisto.client.data.* // ktlint-disable no-wildcard-imports
 import org.meowcat.mesagisto.client.toByteArray
-import org.meowcat.mesagisto.farbic.IdGen
-import org.meowcat.mesagisto.farbic.Mod.CONFIG
+import org.meowcat.mesagisto.fabric.IdGen
+import org.meowcat.mesagisto.fabric.Mod.CONFIG
 
 suspend fun send(
   sender: ServerPlayerEntity,

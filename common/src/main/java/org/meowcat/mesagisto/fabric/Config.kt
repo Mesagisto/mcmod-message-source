@@ -1,5 +1,5 @@
 @file:OptIn(InternalSerializationApi::class)
-package org.meowcat.mesagisto.farbic
+package org.meowcat.mesagisto.fabric
 
 import kotlinx.serialization.* // ktlint-disable no-wildcard-imports
 import java.nio.file.Path
