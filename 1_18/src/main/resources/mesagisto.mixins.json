@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "org.meowcat.mesagisto.fabric.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ServerChatMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "1_18-refmap.json"
+}
