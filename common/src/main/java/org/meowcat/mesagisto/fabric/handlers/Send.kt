@@ -1,6 +1,5 @@
 package org.meowcat.mesagisto.fabric.handlers
 
-import io.nats.client.impl.NatsMessage
 import net.minecraft.server.network.ServerPlayerEntity
 import org.meowcat.mesagisto.client.Server
 import org.meowcat.mesagisto.client.data.* // ktlint-disable no-wildcard-imports
@@ -29,7 +28,5 @@ suspend fun send(
   )
   val packet = Packet.from(message.left())
 
-  Server.sendAndRegisterReceive(0L, channel, packet) receive@{ it, _ ->
-    return@receive receive(it as NatsMessage)
-  }
+  Server.send("0", channel, packet)
 }

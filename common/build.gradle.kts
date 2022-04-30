@@ -13,15 +13,15 @@ tasks.compileKotlin {
 }
 
 dependencies {
-  minecraft("com.mojang:minecraft:1.16.5")
-  mappings("net.fabricmc:yarn:1.16.5+build.1:v2")
+  minecraft("com.mojang:minecraft:1.18.2")
+  mappings("net.fabricmc:yarn:1.18.2+build.1:v2")
 
-  modCompileOnly("net.fabricmc:fabric-loader:${property("loader_version")}")
+  modCompileOnly("net.fabricmc:fabric-loader:0.11.3")
   modCompileOnly("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
 
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt")
-  implementation("io.nats:jnats:${property("nats_version")}")
-  implementation("org.meowcat:mesagisto-client-jvm:${property("mesagisto_client_version")}")
+  implementation("io.nats:jnats:2.14.0")
+  implementation("org.meowcat:mesagisto-client-jvm:1.3.0")
   // implementation("org.meowcat:mesagisto-client:1.0.14-build")
   implementation("com.charleskorn.kaml:kaml:0.38.0")
 }

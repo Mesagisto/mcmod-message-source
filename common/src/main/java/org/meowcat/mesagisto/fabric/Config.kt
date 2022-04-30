@@ -13,7 +13,6 @@ class ConfigKeeper<C : Any> (
 ) {
 
   fun save() {
-    val clazz = value::class
     val str = Yaml.encodeToString(serializer, value)
     path.writeText(str)
   }

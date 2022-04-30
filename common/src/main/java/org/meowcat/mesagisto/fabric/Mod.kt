@@ -13,6 +13,7 @@ import org.apache.logging.log4j.LogManager
 import org.meowcat.mesagisto.client.Logger
 import org.meowcat.mesagisto.client.MesagistoConfig
 import org.meowcat.mesagisto.fabric.api.IChat
+import org.meowcat.mesagisto.fabric.handlers.Receive
 import org.meowcat.mesagisto.fabric.handlers.send
 import java.util.* // ktlint-disable no-wildcard-imports
 import kotlin.coroutines.EmptyCoroutineContext
@@ -40,6 +41,7 @@ object Mod : ModInitializer, CoroutineScope {
     // todo
     ServerLifecycleEvents.SERVER_STARTED.register {
       server = it
+      chatImpl.setServer(it)
     }
     ServerLifecycleEvents.SERVER_STOPPING.register {
       configKeeper.save()
@@ -51,6 +53,9 @@ object Mod : ModInitializer, CoroutineScope {
       cipherKey = CONFIG.cipher.key
       cipherRefusePlain = CONFIG.cipher.refusePlain
     }.apply()
+    runBlocking {
+      Receive.recover()
+    }
   }
 
   fun onServerChat(
@@ -66,7 +71,7 @@ fun Mod.broadcastMessage(
   type: MessageType = MessageType.CHAT,
   senderUuid: UUID = UUID.randomUUID()
 ) {
-  server.playerManager.broadcastChatMessage(message, type, senderUuid)
+  chatImpl.broadcastMessage(message, type, senderUuid)
 }
 fun Mod.broadcastMessage(
   message: String,
@@ -74,4 +79,9 @@ fun Mod.broadcastMessage(
   senderUuid: UUID = UUID.randomUUID()
 ) {
   broadcastMessage(LiteralText(message), type, senderUuid)
+}
+
+val chatImpl = run {
+  val loader = ServiceLoader.load(IChat::class.java)
+  loader.findFirst().get()
 }

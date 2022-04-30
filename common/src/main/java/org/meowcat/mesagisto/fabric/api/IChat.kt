@@ -4,7 +4,7 @@ import net.minecraft.network.MessageType
 import net.minecraft.server.MinecraftServer
 import net.minecraft.text.Text
 import java.util.* // ktlint-disable no-wildcard-imports
-
+// TODO
 interface IChat {
   fun setServer(server: MinecraftServer)
   fun broadcastMessage(
