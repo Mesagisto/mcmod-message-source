@@ -18,7 +18,10 @@ pkg {
       val task = this@shadowJar
       dependsOn(task)
       mustRunAfter(task)
-      input.set(task.outputs.files.singleFile)
+//      this.inputs.file(task.outputs.files.singleFile)
+//      this.inputs.file(task.outputs.files.singleFile)
+//      this.inputFile.set(task.outputs.files.singleFile)
+      this.input.set(task.outputs.files.singleFile)
       // 这里需要借助fabric-loom进行remap
     }
     minimize()
@@ -43,8 +46,8 @@ dependencies {
   mappings("net.fabricmc:yarn:1.16.5+build.1:v2")
 
   pkgIn(project(":common"))
-  pkgIn("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt")
-  pkgIn("io.nats:jnats:${property("nats_version")}")
-  pkgIn("org.meowcat:mesagisto-client-jvm:${property("mesagisto_client_version")}")
-  pkgIn("com.charleskorn.kaml:kaml:0.38.0")
+  pkgIn("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+  pkgIn("io.nats:jnats:2.14.0")
+  pkgIn("org.meowcat:mesagisto-client-jvm:1.3.0")
+  pkgIn("com.charleskorn.kaml:kaml:0.43.0")
 }

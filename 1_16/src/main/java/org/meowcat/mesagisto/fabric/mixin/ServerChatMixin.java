@@ -16,7 +16,7 @@ public class ServerChatMixin {
 	@Shadow
 	public ServerPlayerEntity player;
 
-	@Inject(at = @At("TAIL"), method = "onGameMessage(Lnet/minecraft/network/packet/c2s/play/ChatMessageC2SPacket;)V")
+	@Inject(at = @At("INVOKE"), method = "onGameMessage(Lnet/minecraft/network/packet/c2s/play/ChatMessageC2SPacket;)V")
 	public void onChat(ChatMessageC2SPacket packet, CallbackInfo ci) {
 		ServerPlayerEntity player = this.player;
 		String message = packet.getChatMessage();
