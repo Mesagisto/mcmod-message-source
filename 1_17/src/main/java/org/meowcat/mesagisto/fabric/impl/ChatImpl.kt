@@ -7,11 +7,12 @@ import org.meowcat.mesagisto.fabric.api.IChat
 import java.util.* // ktlint-disable no-wildcard-imports
 
 class ChatImpl : IChat {
+  private lateinit var server: MinecraftServer
   override fun setServer(server: MinecraftServer) {
-    TODO("Not yet implemented")
+    this.server = server
   }
 
   override fun broadcastMessage(message: Text, type: MessageType, senderUuid: UUID) {
-    TODO("Not yet implemented")
+    server.playerManager.broadcastChatMessage(message, type, senderUuid)
   }
 }
