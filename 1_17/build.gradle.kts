@@ -4,7 +4,6 @@ plugins {
   java
   id("fabric-loom")
   id("org.jetbrains.kotlin.jvm")
-  id("org.jetbrains.kotlin.plugin.serialization")
   id("com.github.johnrengelman.shadow")
   id("io.itsusinn.pkg")
 }
@@ -45,8 +44,7 @@ dependencies {
   mappings("net.fabricmc:yarn:1.17+build.6:v2")
 
   pkgIn(project(":common"))
-  pkgIn("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
-  pkgIn("io.nats:jnats:2.14.0")
-  pkgIn("org.meowcat:mesagisto-client-jvm:1.3.0")
-  pkgIn("com.charleskorn.kaml:kaml:0.43.0")
+  pkgIn("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
+  pkgIn("io.nats:jnats:2.15.3")
+  pkgIn("org.mesagisto:mesagisto-client:1.5.1")
 }

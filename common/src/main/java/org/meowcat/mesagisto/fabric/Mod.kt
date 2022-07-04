@@ -12,6 +12,7 @@ import net.minecraft.text.Text
 import org.apache.logging.log4j.LogManager
 import org.meowcat.mesagisto.client.Logger
 import org.meowcat.mesagisto.client.MesagistoConfig
+import org.meowcat.mesagisto.client.utils.ConfigKeeper
 import org.meowcat.mesagisto.fabric.api.IChat
 import org.meowcat.mesagisto.fabric.handlers.Receive
 import org.meowcat.mesagisto.fabric.handlers.send
@@ -49,9 +50,7 @@ object Mod : ModInitializer, CoroutineScope {
     MesagistoConfig.builder {
       name = "fabric"
       natsAddress = CONFIG.nats
-      cipherEnable = CONFIG.cipher.enable
       cipherKey = CONFIG.cipher.key
-      cipherRefusePlain = CONFIG.cipher.refusePlain
     }.apply()
     runBlocking {
       Receive.recover()
