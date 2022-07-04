@@ -17,6 +17,7 @@ build-1_18(){
 	mv 1_18/packages/* packages/
 }
 build(){
+  rm -rf packages
 	mkdir packages
 	./gradlew clean :1_16:remapJar
 	build-1_16
