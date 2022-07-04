@@ -17,9 +17,6 @@ pkg {
       val task = this@shadowJar
       dependsOn(task)
       mustRunAfter(task)
-//      this.inputs.file(task.outputs.files.singleFile)
-//      this.inputs.file(task.outputs.files.singleFile)
-//      this.inputFile.set(task.outputs.files.singleFile)
       this.input.set(task.outputs.files.singleFile)
       // 这里需要借助fabric-loom进行remap
     }
@@ -27,6 +24,7 @@ pkg {
   }
   relocateKotlinxLib()
   relocateKotlinStdlib()
+  kotlinRelocate("org.yaml.snakeyaml", "$group.relocate.org.yaml.snakeyaml")
 }
 tasks {
   processResources {
