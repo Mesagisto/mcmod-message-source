@@ -53,9 +53,6 @@ dependencies {
   compileOnly("org.jetbrains.kotlin:kotlin-stdlib")
 
   pkgIn(project(":common"))
-  pkgIn("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
-  pkgIn("io.nats:jnats:2.15.3")
-  pkgIn("org.mesagisto:mesagisto-client:1.5.2")
 }
 
 java {

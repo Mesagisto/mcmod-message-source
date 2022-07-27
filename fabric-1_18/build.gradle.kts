@@ -50,5 +50,4 @@ dependencies {
   mappings(loom.officialMojangMappings())
 
   pkgIn(project(":common"))
-  pkgIn("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
 }
