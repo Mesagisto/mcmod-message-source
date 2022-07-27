@@ -26,7 +26,7 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: latest
           prerelease: true
-          title: "Development Build/不稳定发行版"
+          title: "Unstable Release/不稳定发行版"
           files: |
             packages/*.jar
             LICENSE
