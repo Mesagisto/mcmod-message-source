@@ -1,29 +1,22 @@
-build-1_16(){
-	cd 1_16
-	bash build.sh
-	cd ..
-	mv 1_16/packages/* packages/
+build-fabric(){
+  ./gradlew clean :fabric-1_16:remapJar
+  mv fabric-1_16/build/libs/*.jar packages/fabric-1_16.jar
+  ./gradlew clean :fabric-1_17:remapJar
+  mv fabric-1_17/build/libs/*.jar packages/fabric-1_17.jar
+  ./gradlew clean :fabric-1_18:remapJar
+  mv fabric-1_18/build/libs/*.jar packages/fabric-1_18.jar
+  ./gradlew clean :fabric-1_19:remapJar
+  mv fabric-1_19/build/libs/*.jar packages/fabric-1_19.jar
 }
-build-1_17(){
-	cd 1_17
-	bash build.sh
-	cd ..
-	mv 1_17/packages/* packages/
-}
-build-1_18(){
-	cd 1_18
-	bash build.sh
-	cd ..
-	mv 1_18/packages/* packages/
+build-forge(){
+  ./gradlew clean :forge-1_18:remapJar
+  mv forge-1_18/build/libs/*.jar packages/forge-1_18.jar
 }
 build(){
   rm -rf packages
-	mkdir packages
-	./gradlew clean :1_16:remapJar
-	build-1_16
-	./gradlew clean :1_17:remapJar
-	build-1_17
-	./gradlew clean :1_18:remapJar
-	build-1_18
+  mkdir packages
+  ./gradlew clean
+  build-fabric
+  build-forge
 }
 build

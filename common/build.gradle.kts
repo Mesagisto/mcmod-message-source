@@ -1,6 +1,5 @@
 plugins {
   java
-  id("fabric-loom")
   id("org.jetbrains.kotlin.jvm")
 }
 tasks.compileKotlin {
@@ -10,13 +9,12 @@ tasks.compileKotlin {
   }
   sourceCompatibility = "1.8"
 }
-
+repositories {
+  mavenCentral()
+}
 dependencies {
-  minecraft("com.mojang:minecraft:1.18.2")
-  mappings("net.fabricmc:yarn:1.18.2+build.1:v2")
 
-  modCompileOnly("net.fabricmc:fabric-loader:0.11.3")
-  modCompileOnly("net.fabricmc.fabric-api:fabric-api:${property("fabric_api_version")}")
+  compileOnly("org.apache.logging.log4j:log4j-api:2.17.2")
 
   implementation("org.fusesource.leveldbjni:leveldbjni-all:1.8")
 
@@ -28,5 +26,5 @@ dependencies {
 
   implementation("io.nats:jnats:2.15.3")
   implementation("org.bouncycastle:bcprov-jdk15on:1.70")
-  implementation("org.mesagisto:mesagisto-client:1.5.1")
+  implementation("org.mesagisto:mesagisto-client:1.5.2")
 }
