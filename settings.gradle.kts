@@ -1,4 +1,4 @@
-rootProject.name = "fabric-message-source"
+rootProject.name = "mcmod-message-source"
 pluginManagement {
   repositories {
     maven("https://maven.fabricmc.net/") {
