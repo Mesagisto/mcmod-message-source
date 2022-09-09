@@ -17,7 +17,7 @@ plugins {
   id("io.itsusinn.pkg")
 }
 architectury {
-  minecraft = "1.19"
+  minecraft = "1.19.2"
   platformSetupLoomIde()
   fabric()
 }
@@ -52,7 +52,7 @@ tasks {
 
 dependencies {
   modImplementation("net.fabricmc:fabric-loader:0.14.8")
-  modImplementation("net.fabricmc.fabric-api:fabric-api:0.58.0+1.19")
+  modImplementation("net.fabricmc.fabric-api:fabric-api:0.58.0+1.19.2")
 
   val loom = project.extensions.getByName<LoomGradleExtensionAPI>("loom")
   minecraft("com.mojang:minecraft:1.19")
