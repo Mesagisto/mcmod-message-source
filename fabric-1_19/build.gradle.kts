@@ -55,7 +55,7 @@ dependencies {
   modImplementation("net.fabricmc.fabric-api:fabric-api:0.58.6+1.19.2")
 
   val loom = project.extensions.getByName<LoomGradleExtensionAPI>("loom")
-  minecraft("com.mojang:minecraft:1.19")
+  minecraft("com.mojang:minecraft:1.19.2")
   mappings(loom.officialMojangMappings())
 
   pkgIn(project(":common"))
