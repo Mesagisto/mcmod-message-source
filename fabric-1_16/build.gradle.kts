@@ -49,5 +49,6 @@ dependencies {
   minecraft("com.mojang:minecraft:1.16.5")
   mappings(loom.officialMojangMappings())
 
+  pkgIn("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
   pkgIn(project(":common"))
 }
