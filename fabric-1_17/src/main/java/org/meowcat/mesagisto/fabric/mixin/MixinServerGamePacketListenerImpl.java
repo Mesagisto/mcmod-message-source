@@ -1,13 +1,10 @@
 package org.meowcat.mesagisto.fabric.mixin;
 
-import net.minecraft.network.chat.ChatType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.minecraft.server.network.TextFilter;
-import org.meowcat.mesagisto.client.Logger;
 import org.meowcat.mesagisto.fabric.impl.ChatImpl;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

@@ -22,7 +22,6 @@ architectury {
   fabric()
 }
 loom {
-  silentMojangMappingsLicense()
   fabricApi { }
 }
 pkg {
@@ -54,9 +53,8 @@ dependencies {
   modImplementation("net.fabricmc:fabric-loader:0.14.8")
   modImplementation("net.fabricmc.fabric-api:fabric-api:0.58.6+1.19.2")
 
-  val loom = project.extensions.getByName<LoomGradleExtensionAPI>("loom")
   minecraft("com.mojang:minecraft:1.19.2")
-  mappings(loom.officialMojangMappings())
+  mappings("net.fabricmc:yarn:1.19.2+build.3:v2")
 
   pkgIn(project(":common"))
   pkgIn("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")

@@ -12,9 +12,6 @@
     "homepage": "https://github.com/MeowCat-Studio/mesagisto",
     "sources": "https://github.com/MeowCat-Studio/fabric-message-source"
   },
-  "mixins": [
-    "mesagisto.mixins.json"
-  ],
   "environment": "*",
   "license": "LGPLv3",
   "entrypoints": {
