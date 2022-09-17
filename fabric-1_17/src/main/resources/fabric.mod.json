@@ -18,7 +18,9 @@
   "environment": "*",
   "license": "LGPLv3",
   "entrypoints": {
-    "main": ["org.meowcat.mesagisto.fabric.ModAdapter"]
+    "main": [
+      "org.mesagisto.fabric.ModAdapter"
+    ]
   },
   "depends": {
     "fabricloader": ">=0.12.2",

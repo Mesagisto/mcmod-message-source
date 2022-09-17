@@ -3,6 +3,6 @@
   "package": "org.meowcat.mesagisto.fabric.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinServerGamePacketListenerImpl"
+    "org.mesagisto.fabric.mixin.MixinServerGamePacketListenerImpl"
   ]
 }
