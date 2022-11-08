@@ -1,6 +1,6 @@
-package org.meowcat.mesagisto.forge.impl
+package org.mesagisto.forge.impl
 
-import org.meowcat.mesagisto.forge.logger
+import org.mesagisto.forge.logger
 import org.mesagisto.mcmod.api.ICompat
 import org.mesagisto.mcmod.api.Log4jLogger
 

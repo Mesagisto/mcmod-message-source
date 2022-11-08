@@ -1,4 +1,4 @@
-package org.meowcat.mesagisto.forge.impl
+package org.mesagisto.forge.impl
 
 import net.minecraft.network.chat.ChatType
 import net.minecraft.network.chat.TextComponent
@@ -16,7 +16,7 @@ object ChatImpl : IChat {
 
   fun deliverChatEvent(event: ServerChatEvent) {
     handlers.forEach {
-      it.hande(event.player.name.string, event.message)
+      it.handle(event.player.name.string, event.message)
     }
   }
   override fun broadcastMessage(message: String) {

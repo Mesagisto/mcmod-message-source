@@ -9,7 +9,7 @@ interface IChat {
 }
 
 fun interface ChatHandler {
-  fun hande(sender: String, content: String)
+  fun handle(sender: String, content: String)
 }
 val ChatImpl by lazy {
   ServiceLoader.load(IChat::class.java).findFirst().get()

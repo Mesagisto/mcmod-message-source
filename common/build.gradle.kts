@@ -11,6 +11,7 @@ tasks.compileKotlin {
 }
 repositories {
   mavenCentral()
+  mavenLocal()
 }
 dependencies {
 
@@ -24,7 +25,6 @@ dependencies {
   implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.3")
   implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.13.3")
 
-  implementation("io.nats:jnats:2.15.3")
   implementation("org.bouncycastle:bcprov-jdk15on:1.70")
-  implementation("org.mesagisto:mesagisto-client:1.5.2")
+  implementation("org.mesagisto:mesagisto-client:1.6.0-rc.1")
 }
