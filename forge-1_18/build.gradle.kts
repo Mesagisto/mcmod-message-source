@@ -49,7 +49,7 @@ dependencies {
   minecraft("com.mojang:minecraft:1.18.2")
   mappings(loom.officialMojangMappings())
 
-  forge("net.minecraftforge:forge:1.18.2-40.0.12")
+  forge("net.minecraftforge:forge:1.18.2-40.1.0")
   compileOnly("org.jetbrains.kotlin:kotlin-stdlib")
 
   pkgIn(project(":common"))

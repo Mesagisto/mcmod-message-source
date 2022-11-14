@@ -3,9 +3,9 @@ package org.mesagisto.mcmod
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import org.meowcat.mesagisto.client.Logger
-import org.meowcat.mesagisto.client.MesagistoConfig
-import org.meowcat.mesagisto.client.utils.ConfigKeeper
+import org.mesagisto.client.Logger
+import org.mesagisto.client.MesagistoConfig
+import org.mesagisto.client.utils.ConfigKeeper
 import org.mesagisto.mcmod.api.ChatImpl
 import org.mesagisto.mcmod.api.CompatImpl
 import org.mesagisto.mcmod.handlers.Receive
@@ -30,17 +30,21 @@ object ModEntry : CoroutineScope {
       Logger.info { "信使插件未启用" }
       return
     }
+    configKeeper.save()
     ChatImpl.registerChatHandler { sender, content ->
       launch {
         send(sender, content)
       }
     }
-    MesagistoConfig.builder {
+    val config = MesagistoConfig.builder {
       name = "mcmod"
-      natsAddress = CONFIG.nats
+      remotes = CONFIG.centers
       cipherKey = CONFIG.cipher.key
-    }.apply()
-    runBlocking {
+      sameSideDeliver = false
+      packetHandler = Receive::packetHandler
+    }
+    launch {
+      config.apply()
       Receive.recover()
     }
   }

@@ -1,8 +1,9 @@
 package org.mesagisto.mcmod.handlers
 
-import org.meowcat.mesagisto.client.Server
-import org.meowcat.mesagisto.client.data.* // ktlint-disable no-wildcard-imports
-import org.meowcat.mesagisto.client.toByteArray
+import org.mesagisto.client.Server
+import org.mesagisto.client.data.* // ktlint-disable no-wildcard-imports
+import org.mesagisto.client.toByteArray
+import org.mesagisto.client.utils.left
 import org.mesagisto.mcmod.ModEntry.CONFIG
 import org.mesagisto.mcmod.ModEntry.DATA
 
@@ -10,7 +11,7 @@ suspend fun send(
   sender: String,
   content: String
 ) {
-  val channel = CONFIG.channel
+  val roomId = CONFIG.roomId()
   val msgId = DATA.idCounter
   val chain = listOf<MessageType>(
     MessageType.Text(content)
@@ -22,9 +23,9 @@ suspend fun send(
       null
     ),
     id = msgId.getAndIncrement().toByteArray(),
-    chain = chain
+    chain = chain,
+    from = CONFIG.target.toByteArray()
   )
-  val packet = Packet.from(message.left())
-
-  Server.send(CONFIG.target, channel, packet)
+  val packet = Packet.new(roomId, message.left())
+  Server.send(packet, "mesagisto")
 }

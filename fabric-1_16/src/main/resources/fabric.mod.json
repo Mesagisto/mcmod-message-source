@@ -19,7 +19,7 @@
   "entrypoints": {
     "main": [
       {
-        "value": "org.meowcat.mesagisto.fabric.ModAdapter"
+        "value": "org.mesagisto.fabric.ModAdapter"
       }
     ]
   },

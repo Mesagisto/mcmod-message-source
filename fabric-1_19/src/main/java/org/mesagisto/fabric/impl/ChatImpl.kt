@@ -14,7 +14,7 @@ object ChatImpl : IChat {
 
   fun deliverChatEvent(player: ServerPlayerEntity, content: Text) {
     handlers.forEach {
-      it.hande(player.name.string, content.string)
+      it.handle(player.name.string, content.string)
     }
   }
   override fun broadcastMessage(message: String) {

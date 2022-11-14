@@ -1,4 +1,4 @@
-package org.meowcat.mesagisto.forge
+package org.mesagisto.forge
 
 import net.minecraft.server.MinecraftServer
 import net.minecraftforge.common.MinecraftForge
@@ -6,7 +6,7 @@ import net.minecraftforge.event.server.ServerStartingEvent
 import net.minecraftforge.event.server.ServerStoppingEvent
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
-import org.meowcat.mesagisto.forge.impl.ChatImpl
+import org.mesagisto.forge.impl.ChatImpl
 import org.mesagisto.mcmod.ModEntry
 
 val logger: Logger = LogManager.getLogger("mesagisto")

@@ -1,8 +1,8 @@
 {
   "required": true,
-  "package": "org.meowcat.mesagisto.fabric.mixin",
+  "package": "org.mesagisto.fabric.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "org.mesagisto.fabric.mixin.MixinServerGamePacketListenerImpl"
+    "MixinServerGamePacketListenerImpl"
   ]
 }

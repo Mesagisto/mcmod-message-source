@@ -1,10 +1,10 @@
 package org.mesagisto.mcmod
 
-import org.meowcat.mesagisto.client.ILogger
-import org.meowcat.mesagisto.client.LogLevel
+import org.mesagisto.client.ILogger
+import org.mesagisto.client.LogLevel
 
 typealias Log4jLogger = org.apache.logging.log4j.Logger
-typealias MesagistoLogger = org.meowcat.mesagisto.client.Logger
+typealias MesagistoLogger = org.mesagisto.client.Logger
 fun MesagistoLogger.bridgeToLog4j(impl: Log4jLogger) {
   level = when (impl.level) {
 //    Level.ALL -> LogLevel.TRACE
