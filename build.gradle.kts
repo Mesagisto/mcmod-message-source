@@ -10,4 +10,8 @@ plugins {
 allprojects {
   group = "org.mesagisto"
   version = "1.2.2"
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
 }

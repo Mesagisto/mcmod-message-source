@@ -10,14 +10,12 @@ tasks.compileKotlin {
   sourceCompatibility = "1.8"
 }
 repositories {
-  mavenCentral()
   mavenLocal()
+  mavenCentral()
 }
 dependencies {
-
+  implementation("org.mesagisto:mesagisto-client:1.6.0-rc.6")
   compileOnly("org.apache.logging.log4j:log4j-api:2.17.2")
-
-  implementation("org.fusesource.leveldbjni:leveldbjni-all:1.8")
 
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.2")
   implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.6.2")
@@ -26,5 +24,4 @@ dependencies {
   implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.13.3")
 
   implementation("org.bouncycastle:bcprov-jdk15on:1.70")
-  implementation("org.mesagisto:mesagisto-client:1.6.0-rc.1")
 }

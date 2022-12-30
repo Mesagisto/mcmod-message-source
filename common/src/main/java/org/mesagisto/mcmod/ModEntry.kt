@@ -5,6 +5,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.mesagisto.client.Logger
 import org.mesagisto.client.MesagistoConfig
+import org.mesagisto.client.Server
 import org.mesagisto.client.utils.ConfigKeeper
 import org.mesagisto.mcmod.api.ChatImpl
 import org.mesagisto.mcmod.api.CompatImpl
@@ -49,6 +50,7 @@ object ModEntry : CoroutineScope {
     }
   }
   fun onDisable() {
+    Server.close()
     dataKeeper.save()
   }
 
