@@ -21,21 +21,22 @@ loom {
 pkg {
   excludePath("mappings/*")
   excludePath("META-INF/*.kotlin_module")
-  excludePath("*.md")
-  excludePath("DebugProbesKt.bin")
-  excludePathStartWith("org/jetbrains/annotations")
-  excludePathStartWith("org/intellij/lang/annotations")
+  excludePath("META-INF/versions/*")
+  excludePath("META-INF/proguard/*")
+  excludePath("META-INF/maven/*")
+  excludePath("META-INF/com.android.tools/*")
+  excludePath("org/slf4j/*")
+  excludePath("org/jetbrains/annotations/*")
+  excludePath("org/intellij/lang/annotations/*")
+  excludePath("kotlin/*")
+  excludePath("kotlinx/*")
+  listOf("asn1", "jcajce", "jce", "pqc", "x509", "math", "i18n", "iana", "internal").forEach {
+    excludePath("org/bouncycastle/$it/*")
+  }
   val task = tasks.remapJar.get()
   task.dependsOn("pkg")
   shadowJar {
     task.inputFile.set(this.archiveFile)
-  }
-  relocateKotlinxLib()
-  relocateKotlinStdlib()
-  kotlinRelocate("org.yaml.snakeyaml", "relocate.org.yaml.snakeyaml")
-  excludePathStartWith("kotlinx/coroutines/flow")
-  listOf("asn1", "jcajce", "jce", "pqc", "x509", "math", "i18n", "iana", "internal").forEach {
-    excludePathStartWith("org/bouncycastle/$it")
   }
 }
 tasks {
