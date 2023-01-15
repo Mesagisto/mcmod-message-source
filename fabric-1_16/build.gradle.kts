@@ -25,6 +25,8 @@ pkg {
   excludePath("META-INF/proguard/*")
   excludePath("META-INF/maven/*")
   excludePath("META-INF/com.android.tools/*")
+  excludePath("META-INF/services/kotlin.reflect*")
+  excludePath("META-INF/services/java.security*")
   excludePath("org/slf4j/*")
   excludePath("org/jetbrains/annotations/*")
   excludePath("org/intellij/lang/annotations/*")

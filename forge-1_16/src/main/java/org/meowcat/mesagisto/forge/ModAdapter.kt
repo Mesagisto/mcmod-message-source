@@ -2,8 +2,8 @@ package org.meowcat.mesagisto.forge
 
 import net.minecraft.server.MinecraftServer
 import net.minecraftforge.common.MinecraftForge
-import net.minecraftforge.event.server.ServerStartingEvent
-import net.minecraftforge.event.server.ServerStoppingEvent
+import net.minecraftforge.event.world.WorldEvent
+import net.minecraftforge.fml.server.ServerLifecycleHooks
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import org.meowcat.mesagisto.forge.impl.ChatImpl
@@ -13,22 +13,23 @@ val logger: Logger = LogManager.getLogger("mesagisto")
 
 @net.minecraftforge.fml.common.Mod("mesagisto")
 class ModAdapter {
-  private lateinit var server: MinecraftServer
+  private val server: MinecraftServer by lazy { ServerLifecycleHooks.getCurrentServer() }
   init {
     MinecraftForge.EVENT_BUS.addListener(ChatImpl::deliverChatEvent)
     MinecraftForge.EVENT_BUS.addListener(this::onServerStart)
     MinecraftForge.EVENT_BUS.addListener(this::onServerStop)
   }
   private fun onServerStart(
-    event: ServerStartingEvent
+    event: WorldEvent.Load
   ) {
-    server = event.server
-    ChatImpl.server = event.server
+    server
+    ChatImpl.server
     ModEntry.onEnable()
   }
+
   private fun onServerStop(
-    event: ServerStoppingEvent
+    event: WorldEvent.Unload
   ) {
-    ModEntry.onDisable()
+    // ModEntry.onDisable()
   }
 }

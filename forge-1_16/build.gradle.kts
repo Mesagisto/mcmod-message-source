@@ -10,7 +10,7 @@ plugins {
   id("io.itsusinn.pkg")
 }
 architectury {
-  minecraft = "1.18.2"
+  minecraft = "1.16.5"
   platformSetupLoomIde()
   forge()
 }
@@ -22,22 +22,24 @@ repositories {
 }
 pkg {
   excludePath("META-INF/*.kotlin_module")
-  excludePathStartWith("META-INF/versions")
-  excludePathStartWith("META-INF/proguard")
-  excludePathStartWith("META-INF/maven")
-  excludePathStartWith("org/slf4j")
-  excludePathStartWith("kotlinx/coroutines/flow")
+  excludePath("META-INF/versions/*")
+  excludePath("META-INF/proguard/*")
+  excludePath("META-INF/maven/*")
+  excludePath("META-INF/com.android.tools/*")
+  excludePath("org/slf4j/*")
+  excludePath("org/jetbrains/annotations/*")
+  excludePath("org/intellij/lang/annotations/*")
+  excludePath("kotlin/*")
+  excludePath("kotlinx/*")
   listOf("asn1", "jcajce", "jce", "pqc", "x509", "math", "i18n", "iana", "internal").forEach {
-    excludePathStartWith("org/bouncycastle/$it")
+    excludePath("org/bouncycastle/$it/*")
   }
   val task = tasks.remapJar.get()
   task.dependsOn("pkg")
   shadowJar {
     task.inputFile.set(this.archiveFile)
   }
-  relocateKotlinStdlib()
-  relocateKotlinxLib()
-  kotlinRelocate("org.yaml.snakeyaml", "$group.relocate.org.yaml.snakeyaml")
+  kotlinRelocate("org.yaml.snakeyaml", "relocate.org.yaml.snakeyaml")
 }
 
 loom {
@@ -46,16 +48,13 @@ loom {
 
 dependencies {
   val loom = project.extensions.getByName<LoomGradleExtensionAPI>("loom")
-  minecraft("com.mojang:minecraft:1.18.2")
+  minecraft("com.mojang:minecraft:1.16.5")
   mappings(loom.officialMojangMappings())
 
-  forge("net.minecraftforge:forge:1.18.2-40.0.12")
+  forge("net.minecraftforge:forge:1.16.5-36.2.34")
   compileOnly("org.jetbrains.kotlin:kotlin-stdlib")
 
   pkgIn(project(":common"))
-  pkgIn("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
-  pkgIn("io.nats:jnats:2.15.3")
-  pkgIn("org.mesagisto:mesagisto-client:1.5.2")
 }
 
 java {
@@ -68,7 +67,6 @@ tasks {
       jvmTarget = "1.8"
       freeCompilerArgs = listOf("-Xinline-classes", "-Xopt-in=kotlin.RequiresOptIn")
     }
-    sourceCompatibility = "1.8"
   }
   processResources {
     inputs.property("version", project.version)
