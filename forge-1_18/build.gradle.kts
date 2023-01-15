@@ -25,7 +25,11 @@ pkg {
   excludePathStartWith("META-INF/versions")
   excludePathStartWith("META-INF/proguard")
   excludePathStartWith("META-INF/maven")
+  excludePathStartWith("META-INF/com.android.tools")
   excludePathStartWith("org/slf4j")
+  excludePathStartWith("org/jetbrains/annotations")
+  excludePathStartWith("org/intellij/lang/annotations")
+
   excludePathStartWith("kotlinx/coroutines/flow")
   listOf("asn1", "jcajce", "jce", "pqc", "x509", "math", "i18n", "iana", "internal").forEach {
     excludePathStartWith("org/bouncycastle/$it")
@@ -37,7 +41,7 @@ pkg {
   }
   relocateKotlinStdlib()
   relocateKotlinxLib()
-  kotlinRelocate("org.yaml.snakeyaml", "$group.relocate.org.yaml.snakeyaml")
+  kotlinRelocate("org.yaml.snakeyaml", "relocate.org.yaml.snakeyaml")
 }
 
 loom {
